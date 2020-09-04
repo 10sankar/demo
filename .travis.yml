@@ -1,1 +1,6 @@
 language: java
+addons:
+  sonarcloud:
+    organization: "10sankar"
+    token:
+      secure: SONAR_TOKEN
