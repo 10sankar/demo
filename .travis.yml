@@ -3,4 +3,4 @@ addons:
   sonarcloud:
     organization: "10sankar"
     token:
-      secure: SONAR_TOKEN
+      secure: $SONAR_TOKEN
