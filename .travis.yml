@@ -4,11 +4,11 @@ addons:
     organization: alefanfi
     token: fae47b803191c687dc98db3ca0237e77537b6059
 script:
-  - mvn verify -DfailIfNoTests=false sonar:sonar -Dsonar.projectKey=demo
+  - mvn verify -DfailIfNoTests=false sonar:sonar -Dsonar.projectKey=alefanfi_bookkeeper_demo
 #addons:
  # sonarcloud:
   #  organization: "10sankar"
-   # token: "4e16ed8f236a8a1314546d0532ca5b8486f09aeb"
+   # token: ""
 #script:
  # - mvn clean verify sonar:sonar -Pcoverage
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
