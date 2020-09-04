@@ -5,4 +5,4 @@ addons:
     token: ${SONAR_TOKEN}
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
+  - mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
