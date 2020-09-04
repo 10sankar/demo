@@ -1,10 +1,7 @@
 language: java
 addons:
   sonarcloud:
-    organization: "10sankar"
-    token: "4e16ed8f236a8a1314546d0532ca5b8486f09aeb"
+    organization: 10sankar
+    token: ${SONAR_TOKEN}
 script:
   - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=10sankar_demo
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-#- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
-  #- mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
