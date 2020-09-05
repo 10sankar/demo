@@ -1,7 +1,21 @@
+sudo: required
 language: java
+
+services:
+  - docker
+
 addons:
   sonarcloud:
     organization: 10sankar
     token: ${SONAR_TOKEN}
+    
 script:
   - mvn clean verify sonar:sonar -Pcoverage -Dsonar.projectKey=10sankar_demo
+
+after_success:
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
+- export IMAGE_NAME=10sankar/demo
+- docker build -t $IMAGE_NAME:$COMMIT .
+- docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+- docker push $IMAGE_NAME
