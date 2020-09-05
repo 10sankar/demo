@@ -2,7 +2,11 @@ sudo: required
 language: java
 
 services:
-  - docker
+- docker
+
+env:
+  global:
+  - COMMIT=${TRAVIS_COMMIT::7}
 
 addons:
   sonarcloud:
